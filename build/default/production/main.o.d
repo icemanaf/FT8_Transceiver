@@ -1,5 +1,5 @@
-build/default/production/main.o:  \
-main.c  \
-constants.h  \
-headers/oled.h  \
- headers/constants.h 
+build/default/production/main.o: main.c constants.h oled.h
+
+constants.h:
+
+oled.h:

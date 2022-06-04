@@ -33,7 +33,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "./headers/oled.h"
+#include "oled.h"
 
 
 

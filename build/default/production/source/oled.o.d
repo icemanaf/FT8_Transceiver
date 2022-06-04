@@ -1,4 +1,8 @@
-build/default/production/source/oled.o:  \
-source/oled.c  \
- source/../headers/oled.h  \
-source/../headers/constants.h 
+build/default/production/source/oled.o: source/oled.c source/../oled.h \
+ source/../constants.h source/../constants.h
+
+source/../oled.h:
+
+source/../constants.h:
+
+source/../constants.h:

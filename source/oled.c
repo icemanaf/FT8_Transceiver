@@ -11,7 +11,8 @@
 #include <xc.h>
 
 
-#include "../headers/oled.h"
+#include "../oled.h"
+#include "../constants.h"
 #include <libpic30.h>
 
 
