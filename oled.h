@@ -6,6 +6,7 @@
  */
 #include <stdint.h>
 #include "constants.h"
+#include "i2c.h"
 #ifndef OLED_H
 #define	OLED_H
 
@@ -21,8 +22,7 @@
 //#define I2C1_SCL_LAT	LATBbits.LATB8
 //#define I2C1_SDA_LAT	LATBbits.LATB9
 
-#define kI2C_100KHZ     (0x00)
-#define kI2C_400KHZ     (0x02)
+
 
 void i2c1Reset();
 void i2c1Enable( uint8_t flags );
