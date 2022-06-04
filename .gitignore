@@ -13,8 +13,8 @@
 *.exp
 
 # Build folders
-.build/
-.dist/
+build/
+dist/
 
 # Precompiled Headers
 *.gch
