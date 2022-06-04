@@ -14,7 +14,7 @@
 
 # Build folders
 .build/
-./dist/
+.dist/
 
 # Precompiled Headers
 *.gch
