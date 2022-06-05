@@ -382,7 +382,7 @@ void oledInit()
     oledCommand(OLED_SEGREMAP | 0x1);
     oledCommand(OLED_COMSCANDEC);
     oledCommand(OLED_SETCOMPINS);         // 0xDA
-    oledCommand(0x02);
+    oledCommand(0x12);
     oledCommand(OLED_SETCONTRAST);        // 0x81
     oledCommand(0x8F);
     oledCommand(OLED_SETPRECHARGE);       // 0xd9

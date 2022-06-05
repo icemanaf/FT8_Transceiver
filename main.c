@@ -35,6 +35,7 @@
 #include <stdlib.h>
 #include "oled.h"
 #include "i2c.h"
+#include "si5351.h"
 
 
 
@@ -80,14 +81,39 @@ int main(void) {
      i2c1Enable(100); 
     __delay_ms(1000);
    
-      
+    
+    si5351_init(SI5351_CRYSTAL_LOAD_8PF, 0, 5);
+    
     oledInit();
     oledClear();
-    oledGotoYX( 2, 0 );
-    oledPrint("Initialising..");
+    oledGotoYX( 2, 15 );
+    oledData(0xFF);
+    oledData(0xFF);
+    oledData(0xFF);
+     oledData(0xFF);
+    oledData(0xFF);
+    oledData(0xFF);
+     oledData(0xFF);
+    oledData(0x0);
+    oledData(0x0);
+    oledData(0x0);
+    
+     oledData(0xFF);
+    oledData(0xFF);
+    oledData(0xFF);
+    oledData(0xFF);
+    oledData(0xFF);
+     oledData(0xFF);
+    oledData(0xFF);
+    oledData(0xFF);
+     oledData(0xFF);
+    
+     oledGotoYX( 3, 2 );
+     oledPrint("VFO 14.095600");
+    //oledPrint("Initialising..");
     
     __delay_ms(2000);
-    oledClear();
+    //oledClear();
     
     //setup Timer3 as the internal clock , firing every 1ms.
      T3CONbits.TCKPS0=0;
@@ -136,11 +162,12 @@ int main(void) {
                  sprintf(str_buffer,"%ld Hz",frequency);
             }
             
-           
+           /*
             oledGotoYX( 1, 0 );
             oledPrint("              ");
             oledGotoYX( 1, 0 );
             oledPrint(str_buffer);
+            */
             
            //reset counters
             T3Counter=0;

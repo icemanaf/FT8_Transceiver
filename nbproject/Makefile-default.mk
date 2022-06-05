@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c source/oled.c source/i2c.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c source/oled.c source/i2c.c source/si5351.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/source/oled.o.d ${OBJECTDIR}/source/i2c.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o ${OBJECTDIR}/source/si5351.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/source/oled.o.d ${OBJECTDIR}/source/i2c.o.d ${OBJECTDIR}/source/si5351.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o ${OBJECTDIR}/source/si5351.o
 
 # Source Files
-SOURCEFILES=main.c source/oled.c source/i2c.c
+SOURCEFILES=main.c source/oled.c source/i2c.c source/si5351.c
 
 
 
@@ -107,11 +107,17 @@ ${OBJECTDIR}/source/oled.o: source/oled.c  .generated_files/flags/default/4d6ad0
 	@${RM} ${OBJECTDIR}/source/oled.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/oled.c  -o ${OBJECTDIR}/source/oled.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/oled.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/6d6ada035a8da8b7046b55ad2aecd83390a8647b .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/5647e11056661392f78e8d6ab373bdeba727e75c .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/i2c.o.d 
 	@${RM} ${OBJECTDIR}/source/i2c.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/i2c.c  -o ${OBJECTDIR}/source/i2c.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/i2c.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
+	
+${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/8c27ac84db9c3cff601c7e0756319cba3f35c5fb .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+	@${MKDIR} "${OBJECTDIR}/source" 
+	@${RM} ${OBJECTDIR}/source/si5351.o.d 
+	@${RM} ${OBJECTDIR}/source/si5351.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  source/si5351.c  -o ${OBJECTDIR}/source/si5351.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/si5351.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/8e72fbbbf97909da04742f652fc0dceb1805a300 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
@@ -126,11 +132,17 @@ ${OBJECTDIR}/source/oled.o: source/oled.c  .generated_files/flags/default/abc477
 	@${RM} ${OBJECTDIR}/source/oled.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/oled.c  -o ${OBJECTDIR}/source/oled.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/oled.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/d9294f0b9c91c7dd4cc7167900465d6b65b84bc0 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/d9f7b2bb7e6b921d0549b890f562f52738263266 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/i2c.o.d 
 	@${RM} ${OBJECTDIR}/source/i2c.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/i2c.c  -o ${OBJECTDIR}/source/i2c.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/i2c.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
+	
+${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/ae862df1ec9355c6e0bf2bc4b1868e7b59e3b602 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+	@${MKDIR} "${OBJECTDIR}/source" 
+	@${RM} ${OBJECTDIR}/source/si5351.o.d 
+	@${RM} ${OBJECTDIR}/source/si5351.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  source/si5351.c  -o ${OBJECTDIR}/source/si5351.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/si5351.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
 endif
 
