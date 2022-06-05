@@ -256,10 +256,16 @@ struct Si5351IntStatus
 
 
 	uint8_t si5351_init(uint8_t, uint32_t, int32_t);
-	//void si5351_reset(void);
-  //  uint8_t si5351_si5351_write_bulk(uint8_t, uint8_t, uint8_t *);
-	//uint8_t si5351_si5351_write(uint8_t, uint8_t);
-	//uint8_t si5351_si5351_read(uint8_t);
+    uint64_t si5351_pll_calc(enum si5351_pll pll, uint64_t freq, struct Si5351RegSet *reg, int32_t correction, uint8_t vcxo);
+    void si5351_set_pll(uint64_t , enum si5351_pll target_pll);
+    uint8_t si5351_read(uint8_t );
+    uint8_t si5351_write(uint8_t , uint8_t );
+	void si5351_reset(void);
+    void si5351_pll_reset(enum si5351_pll);
+    void si5351_set_ms_source(enum si5351_clock , enum si5351_pll );
+    void si5351_output_enable(enum si5351_clock , uint8_t );
+    void si5351_set_ref_freq(uint32_t , enum si5351_pll_input );
+    void si5351_set_correction(int32_t , enum si5351_pll_input );
     
     
 

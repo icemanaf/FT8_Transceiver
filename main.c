@@ -37,7 +37,7 @@
 #include "i2c.h"
 #include "si5351.h"
 
-
+#define FREQ_CORRECTION 40020
 
 volatile int T3Counter;
 volatile long T1Counter;
@@ -82,10 +82,11 @@ int main(void) {
     __delay_ms(1000);
    
     
-    si5351_init(SI5351_CRYSTAL_LOAD_8PF, 0, 5);
+    uint8_t ret =si5351_init(SI5351_CRYSTAL_LOAD_8PF, 0, FREQ_CORRECTION);
     
     oledInit();
     oledClear();
+    /*
     oledGotoYX( 2, 15 );
     oledData(0xFF);
     oledData(0xFF);
@@ -107,10 +108,10 @@ int main(void) {
     oledData(0xFF);
     oledData(0xFF);
      oledData(0xFF);
-    
+    */
      oledGotoYX( 3, 2 );
-     oledPrint("VFO 14.095600");
-    //oledPrint("Initialising..");
+     sprintf(str_buffer,"VCO %d",ret);
+     oledPrint(str_buffer);
     
     __delay_ms(2000);
     //oledClear();

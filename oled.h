@@ -24,8 +24,7 @@
 
 
 
-void i2c1Reset();
-void i2c1Enable( uint8_t flags );
+
 
 void oledCommand( uint8_t ch );
 void oledDisplayOffset( uint8_t offset );
