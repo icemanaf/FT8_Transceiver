@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c source/oled.c source/i2c.c source/si5351.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c source/oled.c source/i2c.c source/si5351.c source/rotary.c source/controller.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o ${OBJECTDIR}/source/si5351.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/source/oled.o.d ${OBJECTDIR}/source/i2c.o.d ${OBJECTDIR}/source/si5351.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o ${OBJECTDIR}/source/si5351.o ${OBJECTDIR}/source/rotary.o ${OBJECTDIR}/source/controller.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/source/oled.o.d ${OBJECTDIR}/source/i2c.o.d ${OBJECTDIR}/source/si5351.o.d ${OBJECTDIR}/source/rotary.o.d ${OBJECTDIR}/source/controller.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o ${OBJECTDIR}/source/si5351.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/source/oled.o ${OBJECTDIR}/source/i2c.o ${OBJECTDIR}/source/si5351.o ${OBJECTDIR}/source/rotary.o ${OBJECTDIR}/source/controller.o
 
 # Source Files
-SOURCEFILES=main.c source/oled.c source/i2c.c source/si5351.c
+SOURCEFILES=main.c source/oled.c source/i2c.c source/si5351.c source/rotary.c source/controller.c
 
 
 
@@ -119,6 +119,18 @@ ${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/8c
 	@${RM} ${OBJECTDIR}/source/si5351.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/si5351.c  -o ${OBJECTDIR}/source/si5351.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/si5351.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
+${OBJECTDIR}/source/rotary.o: source/rotary.c  .generated_files/flags/default/c295f687f5096c04a951529e09c4da8f56f4bc1 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+	@${MKDIR} "${OBJECTDIR}/source" 
+	@${RM} ${OBJECTDIR}/source/rotary.o.d 
+	@${RM} ${OBJECTDIR}/source/rotary.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  source/rotary.c  -o ${OBJECTDIR}/source/rotary.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/rotary.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
+	
+${OBJECTDIR}/source/controller.o: source/controller.c  .generated_files/flags/default/9a04523ef8aec6b39a1476a08f624644408b6b73 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+	@${MKDIR} "${OBJECTDIR}/source" 
+	@${RM} ${OBJECTDIR}/source/controller.o.d 
+	@${RM} ${OBJECTDIR}/source/controller.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  source/controller.c  -o ${OBJECTDIR}/source/controller.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/controller.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/8e72fbbbf97909da04742f652fc0dceb1805a300 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}" 
@@ -143,6 +155,18 @@ ${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/ae
 	@${RM} ${OBJECTDIR}/source/si5351.o.d 
 	@${RM} ${OBJECTDIR}/source/si5351.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/si5351.c  -o ${OBJECTDIR}/source/si5351.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/si5351.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
+	
+${OBJECTDIR}/source/rotary.o: source/rotary.c  .generated_files/flags/default/2a8d3d2d7416783d7c98bdce5b6d6369b7396edb .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+	@${MKDIR} "${OBJECTDIR}/source" 
+	@${RM} ${OBJECTDIR}/source/rotary.o.d 
+	@${RM} ${OBJECTDIR}/source/rotary.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  source/rotary.c  -o ${OBJECTDIR}/source/rotary.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/rotary.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
+	
+${OBJECTDIR}/source/controller.o: source/controller.c  .generated_files/flags/default/2e8ea82b138d14df66f37ca9794ef998b7f299d5 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+	@${MKDIR} "${OBJECTDIR}/source" 
+	@${RM} ${OBJECTDIR}/source/controller.o.d 
+	@${RM} ${OBJECTDIR}/source/controller.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  source/controller.c  -o ${OBJECTDIR}/source/controller.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/controller.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
 endif
 

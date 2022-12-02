@@ -291,6 +291,14 @@ void oledGotoYX(unsigned char Row, unsigned char Column)
     oledCommand( 0x10 + ((8*Column>>4)&0x0F) );
 }
 
+void oledGoToXYPixel(unsigned char Row,unsigned char ColumnPixel)
+{
+    if (ColumnPixel>132) ColumnPixel=131;
+     oledCommand( 0xB0 + Row);
+    oledCommand( 0x00 + (ColumnPixel & 0x0F) );
+    oledCommand( 0x10 + ((ColumnPixel>>4)&0x0F) );
+}
+
 
 void oledPutChar( char ch )
 {
@@ -318,6 +326,8 @@ void oledClear()
     for (  row = 0; row < 8; row++ ) {
         for (  col = 0; col < 16; col++ ) {
             oledGotoYX( row, col );
+            oledPutChar( ' ' );
+            oledGoToXYPixel(row,124);
             oledPutChar( ' ' );
         }
     }
@@ -372,8 +382,15 @@ void oledInit()
      __delay_ms( 100 );    
     oledCommand(OLED_SETSTARTLINE | 0x0); // line #0
      __delay_ms( 100 );    
-    oledCommand( OLED_CHARGEPUMP ); 
-    oledCommand( 0xAF );  
+   oledCommand( OLED_CHARGEPUMP ); 
+   oledCommand( 0xAF ); 
+     //charge pump
+    //oledCommand( 0xAD ); 
+    //oledCommand( 0x8B ); 
+    
+    //pump voltage
+    oledCommand( 0x30 ); 
+    
     __delay_ms( 100 );
     oledCommand( OLED_MEMORYMODE );  
     oledCommand( 0x0 );  // 0x0 act like ks0108
