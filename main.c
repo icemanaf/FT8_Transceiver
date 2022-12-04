@@ -212,6 +212,7 @@ void Decrement()
 int main(void) {
     
     float inputFreq=0;
+    float oldInputFreq=0;
    
     
     rot.position=0;
@@ -305,8 +306,9 @@ int main(void) {
            {
                si5351_set_freq(SI5351_FREQ_MULT*(GetFrequency(&current_state)) , SI5351_CLK1);
                si5351_output_enable(SI5351_CLK1,0);
+               __delay_ms(100);
                PORTBbits.RB2=0;
-              
+              __delay_ms(500);
            }
        }
        

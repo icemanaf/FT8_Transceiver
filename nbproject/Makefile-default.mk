@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -88,81 +88,81 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=30F3012
 MP_LINKER_FILE_OPTION=,--script=p30F3012.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/3c25be04fa40cdadfbdd98bd3ddc34cc3c931848 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/786c4e3c2a611079693d72609c03f15964c1c1e4 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/oled.o: source/oled.c  .generated_files/flags/default/4d6ad0f4131b4bf311392b9c141817056851659f .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/oled.o: source/oled.c  .generated_files/flags/default/d7b0cd39209cf4a0052db6e347ad891bcfe634e9 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/oled.o.d 
 	@${RM} ${OBJECTDIR}/source/oled.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/oled.c  -o ${OBJECTDIR}/source/oled.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/oled.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/5647e11056661392f78e8d6ab373bdeba727e75c .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/2e327735eaddba318c9134093818fcf923dc012a .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/i2c.o.d 
 	@${RM} ${OBJECTDIR}/source/i2c.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/i2c.c  -o ${OBJECTDIR}/source/i2c.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/i2c.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/8c27ac84db9c3cff601c7e0756319cba3f35c5fb .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/53466dbb0335698a4c3288801160d117e23ed276 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/si5351.o.d 
 	@${RM} ${OBJECTDIR}/source/si5351.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/si5351.c  -o ${OBJECTDIR}/source/si5351.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/si5351.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/rotary.o: source/rotary.c  .generated_files/flags/default/c295f687f5096c04a951529e09c4da8f56f4bc1 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/rotary.o: source/rotary.c  .generated_files/flags/default/2849544cdef092acf4a4d5c25f6fa5507ede34d2 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/rotary.o.d 
 	@${RM} ${OBJECTDIR}/source/rotary.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/rotary.c  -o ${OBJECTDIR}/source/rotary.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/rotary.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/controller.o: source/controller.c  .generated_files/flags/default/9a04523ef8aec6b39a1476a08f624644408b6b73 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/controller.o: source/controller.c  .generated_files/flags/default/a4dbfe203a4c3a7dbb19a5130ef08648a2f6e7af .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/controller.o.d 
 	@${RM} ${OBJECTDIR}/source/controller.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/controller.c  -o ${OBJECTDIR}/source/controller.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/controller.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
 else
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/8e72fbbbf97909da04742f652fc0dceb1805a300 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/cb620c2bc4db4d7256e8facdf9a3a3c82edbfca0 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/oled.o: source/oled.c  .generated_files/flags/default/abc4774258f6e72b6b7cc5f49edc74926671691a .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/oled.o: source/oled.c  .generated_files/flags/default/61640d24440ed9dee53ff40c2bfb499b47c5e888 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/oled.o.d 
 	@${RM} ${OBJECTDIR}/source/oled.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/oled.c  -o ${OBJECTDIR}/source/oled.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/oled.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/d9f7b2bb7e6b921d0549b890f562f52738263266 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/i2c.o: source/i2c.c  .generated_files/flags/default/787a153ec323dcd27f588a75bec0f4ca8661f507 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/i2c.o.d 
 	@${RM} ${OBJECTDIR}/source/i2c.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/i2c.c  -o ${OBJECTDIR}/source/i2c.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/i2c.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/ae862df1ec9355c6e0bf2bc4b1868e7b59e3b602 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/si5351.o: source/si5351.c  .generated_files/flags/default/752ecf45e646870362922572c8403596af61d40e .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/si5351.o.d 
 	@${RM} ${OBJECTDIR}/source/si5351.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/si5351.c  -o ${OBJECTDIR}/source/si5351.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/si5351.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/rotary.o: source/rotary.c  .generated_files/flags/default/2a8d3d2d7416783d7c98bdce5b6d6369b7396edb .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/rotary.o: source/rotary.c  .generated_files/flags/default/31e7557e4cdded47c3a9483468b4378657029fd3 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/rotary.o.d 
 	@${RM} ${OBJECTDIR}/source/rotary.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  source/rotary.c  -o ${OBJECTDIR}/source/rotary.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/source/rotary.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off   
 	
-${OBJECTDIR}/source/controller.o: source/controller.c  .generated_files/flags/default/2e8ea82b138d14df66f37ca9794ef998b7f299d5 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
+${OBJECTDIR}/source/controller.o: source/controller.c  .generated_files/flags/default/9cf1fbdd6698e4438e86aba40da0f730ebb5108 .generated_files/flags/default/bcecbc814c247f3d72fc54f9d0d34aa9c791f402
 	@${MKDIR} "${OBJECTDIR}/source" 
 	@${RM} ${OBJECTDIR}/source/controller.o.d 
 	@${RM} ${OBJECTDIR}/source/controller.o 
@@ -185,15 +185,15 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o ${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG=__DEBUG   -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)      -Wl,,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,${DISTDIR}/memoryfile.xml$(MP_EXTRA_LD_POST)  
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o ${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG=__DEBUG   -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)      -Wl,,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,${DISTDIR}/memoryfile.xml$(MP_EXTRA_LD_POST)  
 	
 else
-${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o ${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,${DISTDIR}/memoryfile.xml$(MP_EXTRA_LD_POST)  
-	${MP_CC_DIR}\\xc16-bin2hex ${DISTDIR}/dspic30F3012_WSPR.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} -a  -omf=elf   
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o ${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,${DISTDIR}/memoryfile.xml$(MP_EXTRA_LD_POST)  
+	${MP_CC_DIR}\\xc16-bin2hex ${DISTDIR}/FT8_DsPic_Transceiver.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} -a  -omf=elf   
 	
 endif
 
