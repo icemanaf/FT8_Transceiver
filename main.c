@@ -211,8 +211,8 @@ void Decrement()
 
 int main(void) {
     
-    float inputFreq=0;
-    float oldInputFreq=0;
+    int inputFreq=0;
+    int oldInputFreq=0;
    
     
     rot.position=0;
@@ -289,18 +289,23 @@ int main(void) {
             
             if (period>1000)
             {
-                inputFreq=12000000/(float)period;
+                inputFreq=(int)(12000000/(float)period);
                 if (osc_on==0)
                 {
                     PORTBbits.RB2=1;
                     __delay_ms(50);
-                    si5351_set_freq(SI5351_FREQ_MULT*(GetFrequency(&current_state)+(int)inputFreq) , SI5351_CLK1);    
+                    si5351_set_freq(SI5351_FREQ_MULT*(GetFrequency(&current_state)+inputFreq) , SI5351_CLK1);    
                     si5351_output_enable(SI5351_CLK1,1);
                     osc_on=1;
                 }
-                si5351_set_freq(SI5351_FREQ_MULT*(GetFrequency(&current_state)+(int)inputFreq) , SI5351_CLK1);
+                
+                if (inputFreq!=oldInputFreq)
+                {
+                    si5351_set_freq(SI5351_FREQ_MULT*(GetFrequency(&current_state)+inputFreq) , SI5351_CLK1);
+                }
+                oldInputFreq=inputFreq;
             }
-            __delay_ms(5);
+            __delay_ms(2);
            inputOn--;
            if (inputOn==0)
            {
